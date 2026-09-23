@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Graph-Conditioned Diffusion for Heterogeneous Data"
+type: software
+version: 0.1.0
+date-released: 2026-09-23
+license: MIT
+repository-code: "https://github.com/DrNFRZM/graph-conditioned-diffusion"
+authors:
+  - family-names: "Nikbakhsh Jorshari"
+    given-names: "Farzam"
+    email: "nikbakhshfarzam@gmail.com"
+abstract: >-
+  A small controlled study of whether conditioning a mixed-type (Gaussian +
+  multinomial) diffusion model on graph neural network embeddings of a
+  user-item graph changes the fidelity or downstream usefulness of generated
+  user profiles on MovieLens 100K.
+keywords:
+  - diffusion models
+  - graph neural networks
+  - tabular data
+  - synthetic data
+references:
+  - type: article
+    authors:
+      - family-names: "Harper"
+        given-names: "F. Maxwell"
+      - family-names: "Konstan"
+        given-names: "Joseph A."
+    title: "The MovieLens Datasets: History and Context"
+    journal: "ACM Transactions on Interactive Intelligent Systems"
+    volume: 5
+    issue: 4
+    year: 2015
+    doi: "10.1145/2827872"
+  - type: conference-paper
+    authors:
+      - family-names: "Ho"
+        given-names: "Jonathan"
+      - family-names: "Jain"
+        given-names: "Ajay"
+      - family-names: "Abbeel"
+        given-names: "Pieter"
+    title: "Denoising Diffusion Probabilistic Models"
+    collection-title: "Advances in Neural Information Processing Systems 33"
+    year: 2020
+    notes: "arXiv:2006.11239"
