@@ -1,0 +1,4 @@
+seed 0 split; unconditional model; T=100; same settings as configs/quick.yaml except epochs/patience
+real train: gender-occupation Cramer's V = 0.342; real test = 0.254
+epochs<=200: best_epoch=125 best_val=0.501 | gender-occ V synth=0.075 | association error vs real train=0.084 | TSTR-table AUC synth=0.590 (real train rows: 0.664)
+epochs<=600: best_epoch=380 best_val=0.484 | gender-occ V synth=0.153 | association error vs real train=0.067 | TSTR-table AUC synth=0.569 (real train rows: 0.664)

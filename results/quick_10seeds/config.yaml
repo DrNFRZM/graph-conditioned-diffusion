@@ -1,0 +1,51 @@
+name: quick
+device: auto
+seeds:
+- 1000
+- 1001
+- 1002
+- 1003
+- 1004
+- 1005
+- 1006
+- 1007
+- 1008
+- 1009
+data:
+  root: data
+  like_threshold: 4
+  split:
+  - 0.6
+  - 0.15
+  - 0.25
+  knn_k: 10
+diffusion:
+  T: 100
+  width: 128
+  depth: 3
+  t_dim: 64
+  cond_dim: 32
+  dropout: 0.1
+  clip_x0: 4.0
+gnn:
+  hidden: 32
+  layers: 2
+  dropout: 0.2
+train:
+  epochs: 300
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  eval_every: 5
+  patience: 12
+eval:
+  n_samples_per_node: 32
+  knn_eval_k: 10
+methods:
+- marginal_bootstrap
+- row_bootstrap
+- diff_uncond
+- diff_flat
+- diff_gnn
+- diff_gnn_shuffled
+- diff_gnn_knn
