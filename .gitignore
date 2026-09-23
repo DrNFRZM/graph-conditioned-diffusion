@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+coverage.xml
+htmlcov/
+.env
+.env.*
+*.log
+build/
+dist/
+# downloaded data (MovieLens licence forbids redistribution) and checkpoints
+data/
+*.pt
+*.pth
+*.ckpt
+# scratch runs; selected small result artifacts remain tracked
+results/scratch*/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
