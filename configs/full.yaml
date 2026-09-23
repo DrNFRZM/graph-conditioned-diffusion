@@ -1,0 +1,39 @@
+# Full run: more seeds, longer schedule, more draws per node. Works on CPU (slower) or CUDA.
+name: full
+device: auto
+seeds: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009]
+data:
+  root: data
+  like_threshold: 4
+  split: [0.60, 0.15, 0.25]
+  knn_k: 10
+diffusion:
+  T: 250
+  width: 128
+  depth: 3
+  t_dim: 64
+  cond_dim: 32
+  dropout: 0.1
+  clip_x0: 4.0
+gnn:
+  hidden: 32
+  layers: 2
+  dropout: 0.2
+train:
+  epochs: 600
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  eval_every: 5
+  patience: 20
+eval:
+  n_samples_per_node: 64
+  knn_eval_k: 10
+methods:
+  - marginal_bootstrap
+  - row_bootstrap
+  - diff_uncond
+  - diff_flat
+  - diff_gnn
+  - diff_gnn_shuffled
+  - diff_gnn_knn
