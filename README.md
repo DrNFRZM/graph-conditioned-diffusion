@@ -1,6 +1,6 @@
 # Graph-Conditioned Diffusion for Heterogeneous Data
 
-A small, controlled study of one question:
+An experiment on generating mixed-type user attributes from MovieLens 100K:
 
 > Does conditioning a diffusion model on graph-derived structural representations improve the fidelity or downstream usefulness of generated heterogeneous data, compared with diffusion without graph conditioning?
 
@@ -66,6 +66,9 @@ after inspecting a one-seed development run. The reported evaluation uses
 disjoint seeds; the study remains exploratory rather than confirmatory.
 
 ## Quick start
+
+The [reproduction check](docs/reproducibility.md) records the environment,
+completed quick run, and checks on the committed ten-seed tables.
 
 ```bash
 git clone https://github.com/DrNFRZM/graph-conditioned-diffusion.git
