@@ -67,6 +67,13 @@ disjoint seeds; the study remains exploratory rather than confirmatory.
 
 ## Quick start
 
+[Development and attribution](docs/development.md) records the original independent
+implementation and the later AI-assisted maintenance work.
+
+This independent personal project uses MovieLens data. It is separate from my
+ongoing MSc thesis on structural priors for diffusion models; no biomedical
+thesis dataset or thesis results are included here.
+
 The [reproduction check](docs/reproducibility.md) records the environment,
 completed quick run, and checks on the committed ten-seed tables.
 
@@ -76,7 +83,8 @@ cd graph-conditioned-diffusion
 pip install torch --index-url https://download.pytorch.org/whl/cpu      # or your CUDA build
 pip install -e ".[dev]"
 
-python -m pytest                                                        # 28 tests: no network, no GPU
+python -m pytest                                                        # synthetic tests and saved-result checks; no network, no GPU
+python scripts/verify_results.py                                       # verify saved aggregates and README without retraining
 python -m gcdiff.run --config configs/quick.yaml --out results/my_quick # CPU, 3 seeds, about 10 min; downloads MovieLens 100K (~5 MB) to ./data
 ```
 
@@ -96,7 +104,7 @@ src/gcdiff/
   train.py       AdamW, deterministic validation loss, early stopping
   metrics.py     fidelity, association, TSTR, conditional consistency, DCR, homophily
   experiment.py  seeds x methods -> results;   run.py CLI;   plots.py figures
-tests/           28 tests incl. posterior-vs-Bayes checks and a leakage test
+tests/           posterior-vs-Bayes, leakage, synthetic pipeline, and saved-result checks
 configs/         quick.yaml (CPU), full.yaml (CUDA / longer)
 docs/            research_note, diffusion_explained, design_decisions, interview_guide, learning_roadmap
 results/         quick_10seeds/ (executed), diagnostics/
